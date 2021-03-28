@@ -28,8 +28,8 @@
       a-button(type='primary', @click='logIn(loginSuperadmin)') loginSuperadmin
 
   //
-  pre {{ $auth.loggedIn }}
-  pre {{ $auth.user }}
+  pre.mt-3 $auth.loggedIn : {{ $auth.loggedIn }}
+  pre $auth.user : {{ $auth.user }}
   pre.p-2.text-xs.overflow-x-auto.rounded-md.bg-gray-200 {{ loginData }}
 
   a-divider(orientation='left') MODEL
@@ -108,14 +108,23 @@ export default {
       const data = await this.$axios.$post('auth/login', {
         ...USER,
       })
-      this.loginData = data
+      // this.loginData = data
+      this.loginData = {...data, USER: USER.username, 'X-Authorization': data ? `Bearer ${data.token}` : ''}
     },
 
     async GET(URL) {
-      const data = await this.$axios.$get(`${URL}`, {
-        params: { ...this.Params },
-      })
-      this.DATA = data
+      try {
+        const data = await this.$axios.$get(`${URL}`, {
+          params: { ...this.Params },
+        })
+        this.$toast.success('success', {
+          duration: 3000,
+          keepOnHover: true,
+        })
+        this.DATA = data
+      } catch (err) {
+        this.$toast.error('error', { duration: 4000, keepOnHover: true })
+      }
     },
     async POST(Params = {}) {
       const data = await this.$axios.$post('', { ...this.Params })

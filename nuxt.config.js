@@ -30,12 +30,15 @@ export default {
   plugins: ['@/plugins/antd-ui'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  // components: true,
+  // DOC: https://github.com/nuxt/components
   components: [
     '~/components/templates',
     '~/components/atoms',
     '~/components/molecules',
     '~/components/organisms',
+    '~/components/_ant',
+    '~/components/_common',
+
   ],
 
 
