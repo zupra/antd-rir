@@ -2,12 +2,14 @@
 .h-screen.flex
 
   .m-auto(
-    style="width:300px"
+    style="width:340px"
   )
-    pre.overflow-x-auto {{error}}
+    pre.overflow-x-auto.p-2.rounded-md.bg-gray-200 {{error}}
 
-    //- N-link.text-2xl(to='/API') API
-    a-button(type='primary', @click='reload') Обновить
+    .flex
+      N-link(to='/')
+        a-button(type='primary') На главную
+      a-button.ml-3(type='primary', @click='reload') Обновить
 
 </template>
 

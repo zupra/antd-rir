@@ -1,4 +1,6 @@
 <template lang="pug">
+
+
 .m-3
   .flex
     a-card(
@@ -28,7 +30,7 @@
   //
   pre {{ $auth.loggedIn }}
   pre {{ $auth.user }}
-  pre.m-2.overflow-x-auto.rounded-md.bg-gray-200 {{ loginData }}
+  pre.p-2.text-xs.overflow-x-auto.rounded-md.bg-gray-200 {{ loginData }}
 
   a-divider(orientation='left') MODEL
 
