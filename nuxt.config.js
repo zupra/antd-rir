@@ -53,11 +53,13 @@ export default {
 
     //
     '@nuxtjs/auth-next',
+    '@nuxtjs/universal-storage',
+    '@nuxtjs/toast',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    withCredentials: true,
+    // withCredentials: true,
     baseURL: 'http://localhost:9090/api/',
   },
 

@@ -1,5 +1,9 @@
 <template lang="pug">
-  h1 HELLO WORLD
+.m-3
+  N-link(
+    to="/API"
+  )
+    a-button(type='primary') Тест API
 </template>
 
 <script>
