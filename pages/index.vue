@@ -2,12 +2,9 @@
 
 .flex
 
+  // C-MainAside
   O-LeftNav
-  //
-
-
-
-
+  
   .m-3
     N-link(
       to="/API"

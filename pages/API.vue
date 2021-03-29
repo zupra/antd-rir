@@ -41,7 +41,11 @@
     size='small',
     title='Тест API_Glazov',
   )
-    a-button.mr-1(v-for='(K, V) in API_Glazov', @click='GET(K)') {{ V }}
+    a-button.mr-1(
+      v-for='(K, V, idx) in API_Glazov',
+      :key="idx"
+      @click='GET(K)'
+    ) {{ V }}
 
     a-button.ml-1(type='primary', @click='POST("devices")') devices(findByQuery)
 
