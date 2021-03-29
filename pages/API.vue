@@ -57,10 +57,12 @@
 
 <script>
 const API_Glazov = {
+  'tenant/devices': 'tenant/devices?pageSize=100&page=0',
   'tenant/assetInfos':
     'tenant/assetInfos?pageSize=10&page=0&sortProperty=createdTime&sortOrder=DESC&type=',
   'device/types': 'device/types',
   'entityView/types': 'entityView/types'
+
 }
 
 export default {

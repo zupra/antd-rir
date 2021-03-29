@@ -17,6 +17,7 @@
     "@nuxtjs/universal-storage": "^0.5.7",
     "ant-design-vue": "^1.7.4",
     "core-js": "^3.9.1",
+    "faker": "^5.5.1",
     "nuxt": "^2.15.3"
   },
   "devDependencies": {
