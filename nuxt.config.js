@@ -40,6 +40,12 @@ export default {
     '~/components/atoms',
     '~/components/molecules',
     '~/components/organisms',
+    //
+    // '~/components/chart',
+    {
+      path: '~/components/chart/',
+      prefix: 'chart',
+    },
     '~/components/_ant',
     '~/components/_common',
 
