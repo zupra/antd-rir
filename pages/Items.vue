@@ -16,10 +16,14 @@
 
 
   .flex.mt-4
-    O-Metrics(
-      title="Обращений"
-      num="2728"
-      minus="1.8%"
+
+    O-Metrics.mr-3(
+      v-for="(It,idx) in DATA"
+      :key="idx"
+      :title="It.title"
+      :num="It.num"
+      :plus="It.plus"
+      :minus="It.minus"
     )
 
 
@@ -39,9 +43,9 @@ export default {
   created() {
     this.DATA = Array.from({ length: 4 }, (_, idx) => ({
       // id: idx + 1,
-      title: this.$faker.company.catchPhrase(),
-      num1: this.$faker.commerce.price(),
-      comment: this.$faker.lorem.sentences(),
+      title: this.$faker.finance.currencyCode(),
+      num: this.$faker.commerce.price(),
+      [this.$faker.datatype.boolean() ? 'plus': 'minus']: this.$faker.commerce.price(),
     }))
   }
 }
